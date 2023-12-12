@@ -15,8 +15,8 @@ jobs:
 
   report_project:
       needs: build
-      uses: bromba-noesis/workflows-repo/.github/workflows/wiki_project_update.yml@main
+      uses: bromba-noesis/workflows-repo/.github/workflows/wiki_library_self_update.yml@main
       with:
         myEnvironment: Development
-        myTag: 0.0.1
+        myTag: 0.0.2
       secrets: inherit
