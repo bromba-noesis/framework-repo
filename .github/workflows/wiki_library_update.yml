@@ -1,7 +1,7 @@
 name: wiki_library_update_proxy
 
 on: 
-    workflow_dispatch:
+    workflow_call:
       inputs:
         myRepo:
           required: true
