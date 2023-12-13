@@ -9,7 +9,7 @@ on:
         myEnvironment:
           required: true
           type: string
-        myVersion:
+        myLibVersion:
           required: true
           type: string
         
@@ -19,5 +19,5 @@ jobs:
       with:
         myRepo: ${{ inputs.myRepo }}
         myEnvironment: ${{ inputs.myEnvironment }}
-        myVersion: ${{ inputs.myVersion }}
+        myVersion: ${{ inputs.myLibVersion }}
       secrets: inherit
