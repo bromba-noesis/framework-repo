@@ -6,8 +6,13 @@ on:
     branches: [ "development" ]
 
 jobs:
+  get-xml-values:
+    uses: bromba-noesis/workflows-repo/.github/workflows/xml_values.yml@main
+    secrets: inherit
+
   build:
     runs-on: ubuntu-latest
+    needs: get-xml-values
     environment: Development
     steps:
       - name: deploy
@@ -18,5 +23,5 @@ jobs:
       uses: bromba-noesis/workflows-repo/.github/workflows/wiki_library_self_update.yml@main
       with:
         myEnvironment: Development
-        myVersion: 0.0.1
+        myVersion: ${{needs.get-xml-values.outputs.projVersion}}
       secrets: inherit
