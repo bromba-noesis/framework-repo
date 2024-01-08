@@ -19,7 +19,7 @@ jobs:
         run: echo deploying to Dev...
 
   report_project:
-      needs: build
+      needs: [get-xml-values, build]
       uses: bromba-noesis/workflows-repo/.github/workflows/wiki_library_self_update.yml@main
       with:
         myEnvironment: Development
